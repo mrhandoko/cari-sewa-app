@@ -1,4 +1,4 @@
-var Rent = require('../models/rent')
-var Rents = {}
+var Model = require('../models')
+var Rent = {}
 
-module.exports = Rents
+module.exports = Rent
