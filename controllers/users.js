@@ -1,4 +1,4 @@
-var Users = require('../models/rent')
+var Users = require('../models')
 
 var Users = {}
 
