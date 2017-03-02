@@ -1,5 +1,5 @@
-var User = require('../models')
+var Users = require('../models')
 
-var User = {}
+var Users = {}
 
-module.exports = User
+module.exports = Users
