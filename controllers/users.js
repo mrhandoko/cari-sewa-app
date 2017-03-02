@@ -1,5 +1,17 @@
-var User = require('../models')
+var User = require('../models/user')
 
-var User = {}
+var User = {
+
+  register : function(req,res){
+
+
+
+
+
+  }
+
+
+
+}
 
 module.exports = User
