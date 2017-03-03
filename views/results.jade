@@ -1,0 +1,30 @@
+head
+  link(rel='stylesheet', href='/stylesheets/style.css')
+    
+center
+  table
+    tr
+      td no
+      td Item name
+      td price
+      td duration
+      td owner
+      td address
+      td rent status
+    - var count = 1
+     each rent in rents
+        tr
+          td 
+            = count
+          td 
+            a(href="/rents/#{rent._id}")= rent.item_name
+          td 
+            = rent.rent_price
+          td 
+            = rent.rent_duration
+          td 
+            = rent.owner.address
+          td 
+            = rent.rent_status
+        - count++
+    
