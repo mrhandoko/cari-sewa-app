@@ -8,9 +8,7 @@ Logins.getLogin = function (req, res) {
 }
 Logins.signIn = function (req, res) {
   User.findOne({
-    where: {
       email: req.body.email
-    }
   }).then(function (user) {
     var salt = user.salt
     const password = req.body.password
@@ -33,17 +31,17 @@ Logins.signIn = function (req, res) {
       status: 'There is no account with email : ' + req.body.email
     })
   })
-},
-Logins.user = function(req, res, next){
-  jwt.verify(req.headers.auth, 'shhhhh', function(err, decoded) {
-    if(decoded.user.email != user.email){
-      res.send('Bukan admin')
-    }else{
-      User.find().then(function(data){
-      res.send(data)
-      })
-    }
-  })
 }
+// Logins.verify = function(req, res, next){
+//   jwt.verify(req.headers.authentication, 'shhhhh', function(err, decoded) {
+//     if(decoded.authentication == "null"){
+//       res.send('Login dulu')
+//     }else{
+//       User.find().then(function(data){
+//       res.send(data)
+//       })
+//     }
+//   })
+// }
 
 module.exports = Logins

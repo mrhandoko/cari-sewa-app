@@ -21,13 +21,12 @@ Rents.getRent = function (req, res, next) {
   Rent.findOne({_id: req.params.id})
     .populate('owner')
     .then(function (rent) {
-<<<<<<< HEAD
+
       res.render('rents/rent', {rent: rent})
       // res.send(rent)
-=======
+
       //res.render('rents/index', {rent: rent})
-      res.json(rent)
->>>>>>> 7ae3b08ca3d99b384b9cd37bf081d1636c40a480
+      res.json(rent) 
     })
 }
 
