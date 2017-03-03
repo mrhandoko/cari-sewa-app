@@ -4,8 +4,8 @@ var rentSchema = mongoose.Schema({
   item_name: String,
   rent_price: Number,
   rent_duration: Number,
-  owner: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
-  rent_status : Boolean
+  owner: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+  rent_status: Boolean
 }, {
   timestamps: true
 })
@@ -13,7 +13,6 @@ var rentSchema = mongoose.Schema({
 rentSchema.methods.getRentPriceTotal = function () {
   return rent_price * rent_duration
 }
-
 
 var Rent = mongoose.model('Rent', rentSchema)
 
