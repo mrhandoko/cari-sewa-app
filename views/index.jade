@@ -1,5 +1,8 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  center
+    h1= title
+    p #{slogan}
+    script(src="https://maps.googleapis.com/maps/api/js?YOUR_API_KEY&callback=initMap"
+    async defer)
