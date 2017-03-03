@@ -5,8 +5,8 @@ var Users = {}
 
 Users.getUsers = function (req, res, next) {
   User.find({})
-    .then(function (customers) {
-      res.send(customers)
+    .then(function (users) {
+      res.send(users)
     })
 }
 
@@ -20,11 +20,11 @@ Users.createUser = function (req, res, next) {
         user: user
       })
     }).catch(function (err) {
-    res.send({
-      status: 'Error',
-      message: err
+      res.send({
+        status: 'Error',
+        message: err
+      })
     })
-  })
 }
 
 Users.updateUser = function (req, res, next) {

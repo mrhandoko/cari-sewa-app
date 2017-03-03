@@ -9,6 +9,14 @@ Rents.getRents = function (req, res, next) {
     })
 }
 
+Rents.getRent = function (req, res, next) {
+  Rent.findOne({_id: req.params.id})
+    .populate('owner')
+    .then(function (rent) {
+      res.send(rent)
+    })
+}
+
 Rents.createRent = function (req, res, next) {
   var user = new Rent(req.body)
   user.save()
@@ -19,11 +27,11 @@ Rents.createRent = function (req, res, next) {
         user: user
       })
     }).catch(function (err) {
-    res.send({
-      status: 'Error',
-      message: err
+      res.send({
+        status: 'Error',
+        message: err
+      })
     })
-  })
 }
 
 Rents.updateRent = function (req, res, next) {
