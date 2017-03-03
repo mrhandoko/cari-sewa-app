@@ -4,5 +4,7 @@ block content
   center
     h1= title
     p #{slogan}
-    script(src="https://maps.googleapis.com/maps/api/js?YOUR_API_KEY&callback=initMap"
-    async defer)
+    br
+    form(action="/", method="POST")
+      input(type="text", name="query", size="60", placeholder="Nama barang yang akan disewa")
+      input(type="submit", value="cari")
