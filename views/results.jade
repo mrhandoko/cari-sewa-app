@@ -1,0 +1,26 @@
+center
+  h3
+    halo yu, ini halaman untuk menampilkn daftar barang sewa sesuai dengan kata pencarian
+  
+  table
+    tr
+      td no
+      td Item name
+      td rent price
+      td rent duration
+      td rent owner
+      td rent status
+     each rent in rents
+        tr
+          td no
+          td 
+            = rent.item_name
+          td 
+            = rent.rent_price
+          td 
+            = rent.rent_duration
+          td 
+            = rent.owner.fullname
+          td 
+            = rent.rent_status
+    
