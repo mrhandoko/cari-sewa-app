@@ -4,7 +4,7 @@ var rentSchema = mongoose.Schema({
   item_name: String,
   rent_price: Number,
   rent_duration: Number,
-  owner: [{type: Schema.Types.ObjectId, ref: 'User'}]
+  owner: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
   rent_status : Boolean
 }, {
   timestamps: true

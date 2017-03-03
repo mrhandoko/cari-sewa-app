@@ -1,5 +1,4 @@
 var mongoose = require('mongoose')
-
 const crypto = require('crypto')
 
 var userSchema = mongoose.Schema({
@@ -8,7 +7,7 @@ var userSchema = mongoose.Schema({
   password: String,
   salt: String,
   phone: String,
-  rents: [{type: Schema.Types.ObjectId, ref: 'Rent'}]
+  rents: [{type: mongoose.Schema.Types.ObjectId, ref: 'Rent'}]
 }, {
   timestamps: true
 })

@@ -1,9 +1,10 @@
 {
-  "name": "Rentbox App",
+  "name": "rentbox-app",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.15.2",
