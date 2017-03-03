@@ -5,8 +5,8 @@ var Rents = {}
 Rents.getRents = function (req, res, next) {
   Rent.find({})
     .then(function (rents) {
-      res.render('rents/index', {rents: rents})
-      // res.send(rents)
+      //res.render('rents/index', {rents: rents})
+      res.json(rents)
     })
 }
 
@@ -14,8 +14,8 @@ Rents.getRent = function (req, res, next) {
   Rent.findOne({_id: req.params.id})
     .populate('owner')
     .then(function (rent) {
-      res.render('rents/index', {rent: rent})
-      // res.send(rent)
+      //res.render('rents/index', {rent: rent})
+      res.json(rent)
     })
 }
 
