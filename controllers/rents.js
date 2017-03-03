@@ -68,5 +68,10 @@ Rents.deleteRent = function (req, res, next) {
       }
     })
 }
-
+Rents.searchRents = function (req, res) {
+  Rent.find({item_name:req.params.query})
+    .then(function (rents) {
+      res.send(rents)
+    })
+}
 module.exports = Rents
