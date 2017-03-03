@@ -1,0 +1,27 @@
+head
+  link(rel='stylesheet', href='/stylesheets/style.css')
+    
+center
+  table
+    tr
+      td no
+      td Item name
+      td rent price
+      td rent duration
+      td rent owner
+      td rent status
+     each rent in rents
+        tr
+          td no
+          td 
+            = rent.item_name
+          td 
+            = rent.rent_price
+          td 
+            = rent.rent_duration
+          td 
+            = rent.owner.fullname
+            = rent.owner.address
+          td 
+            = rent.rent_status
+    

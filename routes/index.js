@@ -20,10 +20,9 @@ router.post('/login', Logins.signIn)
 
 router.post('/', function(req, res, next) {
   Rent.find({item_name: req.body.query}).populate('owner').then(function(rents) {
-    res.send(rents)
+    //res.send(rents)
+    res.render('results', {rents : rents})
   })
 })
-
-
 
 module.exports = router;
