@@ -1,28 +1,45 @@
-head
-  link(rel='stylesheet', href='/stylesheets/style.css')
-    
-center
-  table
-    tr
-      td no
-      td Item name
-      td price
-      td duration
-      td owner
-      td address
-      td rent status
-        tr
-          td 
-          td 
-            a(href="/rents/#{rent._id}")= rent.item_name
-          td 
-            = rent.rent_price
-          td 
-            = rent.rent_duration
-          td 
-            = rent.owner.fullname
-          td
-            = rent.owner.address
-          td 
-            = rent.rent_status
-        - count++
+extends ../layout
+
+block content
+  center
+    table
+      tr
+        td no
+        td Item name
+        td price
+        td duration
+        td owner
+        td address
+        td rent status
+          tr
+            td
+            td
+              a(href="/rents/#{rent._id}")= rent.item_name
+            td
+              = rent.rent_price
+            td
+              = rent.rent_duration
+            td
+              = rent.owner.fullname
+            td
+              = rent.owner.address
+            td
+              = rent.rent_status
+          - count++
+    #map
+  script.
+    function initMap () {
+      var uluru = {lat: -6.236466699999999, lng: 106.7057733}
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: uluru
+      })
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+      })
+    }
+  //- script(src='/scripts/mapdata.js')
+
+  script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCKjJ3U6MNzRlQJFjYAe3mhX7BekmtsHkk&&callback=initMap')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
