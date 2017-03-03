@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express')
+var router = express.Router()
 var Controller = require('../controllers')
 var Users = Controller.Users
 var verify = require('../helpers/auth')
@@ -15,4 +15,4 @@ router.post('/', Users.createUser)
 router.put('/:id', Users.updateUser)
 router.delete('/:id', Users.deleteUser)
 
-module.exports = router;
+module.exports = router

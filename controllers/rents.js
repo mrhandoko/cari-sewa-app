@@ -12,7 +12,7 @@ const gmapClient = gmaps.createClient({
 Rents.getRents = function (req, res, next) {
   Rent.find({})
     .then(function (rents) {
-      //res.render('rents/index', {rents: rents})
+      // res.render('rents/index', {rents: rents})
       res.json(rents)
     })
 }
@@ -21,12 +21,28 @@ Rents.getRent = function (req, res, next) {
   Rent.findOne({_id: req.params.id})
     .populate('owner')
     .then(function (rent) {
-
       res.render('rents/rent', {rent: rent})
       // res.send(rent)
 
       //res.render('rents/index', {rent: rent})
-      res.json(rent) 
+      // res.json(rent) 
+      // res.render('rents/index', {rent: rent})
+      // console.log(rent.owner.address)
+      gmapClient.geocode({
+        address: rent.owner.address
+      }, function (err, response) {
+        // console.log(response)
+        // console.log(rent)
+        // console.log(response)
+        // function(response) {
+        //
+        // }
+        // rent['maps'] = response
+        // console.log('ini rent ', rent)
+        let mapGeometry = response.json.results[0].geometry.location
+        res.render('rents/rent', {rent: rent, maps: mapGeometry})
+      })
+>>>>>>> fb132a2c915ddf014d1ad15bb214d00c1dc706df
     })
 }
 
