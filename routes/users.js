@@ -9,6 +9,7 @@ var Users = Controller.Users
 // });
 
 router.get('/', Users.getUsers)
+router.get('/', Users.getUser)
 router.post('/', Users.createUser)
 router.put('/:id', Users.updateUser)
 router.delete('/:id', Users.deleteUser)

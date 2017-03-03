@@ -10,6 +10,13 @@ Users.getUsers = function (req, res, next) {
     })
 }
 
+Users.getUser = function (req, res, next) {
+  User.find({id: req.params.id})
+    .then(function (user) {
+      res.send(user)
+    })
+}
+
 Users.createUser = function (req, res, next) {
   var user = new User(req.body)
   user.save()
