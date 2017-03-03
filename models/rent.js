@@ -14,6 +14,7 @@ rentSchema.methods.getRentPriceTotal = function () {
   return rent_price * rent_duration
 }
 
+
 var Rent = mongoose.model('Rent', rentSchema)
 
 module.exports = Rent
