@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express')
+var router = express.Router()
 var Controller = require('../controllers')
 var Rents = Controller.Rents
 
@@ -9,8 +9,9 @@ var Rents = Controller.Rents
 // });
 
 router.get('/', Rents.getRents)
+router.get('/:id', Rents.getRent)
 router.post('/', Rents.createRent)
 router.put('/:id', Rents.updateRent)
 router.delete('/:id', Rents.deleteRent)
 
-module.exports = router;
+module.exports = router
