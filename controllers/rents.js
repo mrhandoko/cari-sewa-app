@@ -12,6 +12,7 @@ const gmapClient = gmaps.createClient({
 Rents.getRents = function (req, res, next) {
   Rent.find({})
     .then(function (rents) {
+
       // res.render('rents/index', {rents: rents})
       res.json(rents)
     })
@@ -21,6 +22,7 @@ Rents.getRent = function (req, res, next) {
   Rent.findOne({_id: req.params.id})
     .populate('owner')
     .then(function (rent) {
+
       // res.render('rents/index', {rent: rent})
       // console.log(rent.owner.address)
       gmapClient.geocode({
