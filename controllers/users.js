@@ -33,11 +33,11 @@ Users.updateUser = function (req, res, next) {
   }, {
     $set: req.body
   })
-    .then(function (err, customer) {
+    .then(function (err, user) {
       res.send({
         status: 'Ok',
-        message: `${req.body.name} has been updated`,
-        updated_customer: customer
+        message: `${req.body.fullname} has been updated`,
+        updated_user: user
       })
     })
 }

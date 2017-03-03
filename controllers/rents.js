@@ -36,7 +36,7 @@ Rents.updateRent = function (req, res, next) {
       res.send({
         status: 'Ok',
         message: `${req.body.item_name} has been updated`,
-        updated_customer: customer
+        updated_rent: rent
       })
     })
 }
