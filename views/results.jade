@@ -6,22 +6,25 @@ center
     tr
       td no
       td Item name
-      td rent price
-      td rent duration
-      td rent owner
+      td price
+      td duration
+      td owner
+      td address
       td rent status
+    - var count = 1
      each rent in rents
         tr
-          td no
           td 
-            = rent.item_name
+            = count
+          td 
+            a(href="/rents/#{rent._id}")= rent.item_name
           td 
             = rent.rent_price
           td 
             = rent.rent_duration
           td 
-            = rent.owner.fullname
             = rent.owner.address
           td 
             = rent.rent_status
+        - count++
     
