@@ -6,6 +6,7 @@ var userSchema = mongoose.Schema({
   email: String,
   password: String,
   salt: String,
+  address: String,
   phone: String,
   rents: [{type: mongoose.Schema.Types.ObjectId, ref: 'Rent'}]
 }, {
